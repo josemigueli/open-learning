@@ -102,13 +102,14 @@ function CatalogPage() {
             </div>
 
             <h2 className="mb-6 text-5xl font-extrabold tracking-tight text-white md:text-7xl lg:text-[5rem] leading-[1.1]">
-              Aprende con Inteligencia Artificial Directamente en
+              Educación de Calidad,
               <br className="hidden md:block" />
-              <span className="text-purple-400">Telegram</span>
+              <span className="text-purple-400">Para Todo el Mundo</span>
             </h2>
             <p className="mx-auto mb-10 max-w-2xl text-lg text-slate-400 md:text-xl leading-relaxed">
-              Una plataforma educativa de código abierto donde puedes tomar cursos interactivos
-              impulsados por IA, sin salir de tu app de mensajería favorita.
+              La primera plataforma de aprendizaje colaborativo que usa IA estratégica para
+              democratizar el conocimiento. Aprende gratis, desde cualquier lugar, directamente en{" "}
+              <span className="text-white font-semibold">Telegram</span>.
             </p>
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -125,7 +126,7 @@ function CatalogPage() {
                 className="group flex items-center gap-2 rounded-full border border-white/20 bg-[#171923] px-6 py-3.5 text-base font-mono text-slate-300 transition-all hover:bg-white/10"
               >
                 <span className="text-purple-400 font-bold">&gt;</span>
-                iniciar {BOT_USERNAME}
+                {BOT_USERNAME}
                 <svg
                   className="h-4 w-4 ml-2 opacity-50 transition-opacity group-hover:opacity-100"
                   fill="none"
@@ -148,7 +149,7 @@ function CatalogPage() {
           <div className="absolute inset-0 bg-linear-to-b from-white/5 to-transparent pointer-events-none"></div>
           <div className="relative mx-auto max-w-5xl px-4 text-center">
             <p className="mb-8 text-sm font-semibold tracking-wider text-slate-400 uppercase">
-              Tecnologías y herramientas clave
+              Stack Tecnológico de Vanguardia
             </p>
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-60 transition-all hover:grayscale-0 grayscale">
               <span className="text-2xl font-bold tracking-tighter">TypeScript</span>
@@ -160,13 +161,88 @@ function CatalogPage() {
           </div>
         </section>
 
+        <section className="relative py-24 bg-white/2">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="grid gap-12 md:grid-cols-3">
+              <div className="text-center md:text-left space-y-4">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 ring-1 ring-purple-500/20">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white">IA Estratégica</h3>
+                <p className="text-slate-400 leading-relaxed">
+                  No es un chat genérico. Es un motor de aprendizaje que evalúa tu progreso y genera
+                  dinámicas de estudio sobre contenido verificado.
+                </p>
+              </div>
+              <div className="text-center md:text-left space-y-4">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 ring-1 ring-blue-500/20">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l4 4v10a2 2 0 01-2 2z"
+                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 21v-8H7v8" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 3v5h8" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white">Contenido Abierto</h3>
+                <p className="text-slate-400 leading-relaxed">
+                  Los cursos son archivos Markdown transparentes y portables. Cualquiera puede
+                  crear, mejorar y compartir su conocimiento.
+                </p>
+              </div>
+              <div className="text-center md:text-left space-y-4">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white">Accesibilidad Total</h3>
+                <p className="text-slate-400 leading-relaxed">
+                  Diseñado para funcionar en Telegram con bajo consumo de datos. Aprender es ahora
+                  posible desde cualquier smartphone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="cursos" className="relative py-24">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mb-16 text-center">
-              <h3 className="mb-4 text-4xl font-bold text-white">Catálogo de Cursos</h3>
+              <h3 className="mb-4 text-4xl font-bold text-white">Hub de Cursos Abiertos</h3>
               <p className="mx-auto max-w-2xl text-lg text-slate-400">
-                Aprende haciendo. Cursos interactivos diseñados para mejorar tus habilidades
-                técnicas con la ayuda de tutores virtuales de IA.
+                La comunidad crea, la IA enseña. Explora nuestra red de aprendizaje colaborativo y
+                encuentra el curso que necesitas.
               </p>
             </div>
 
@@ -244,14 +320,7 @@ function CatalogPage() {
           <p className="mb-6 text-sm">
             Proyecto creado con ♥️ para la <strong>Hackatón CubePath 2026</strong> de midudev.
           </p>
-          <div className="flex justify-center gap-6 text-sm">
-            <a
-              href="https://github.com/josemigueli/open-learning"
-              className="transition-colors hover:text-white"
-            >
-              Código Fuente
-            </a>
-            <span>•</span>
+          <div className="text-center">
             <a href="https://cubepath.com/" className="transition-colors hover:text-white">
               Alojado en CubePath
             </a>
