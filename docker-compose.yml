@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  bot:
+    build: .
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      # Ensure you don't overwrite your courses if you want hot-reloading
+      # - ./courses:/app/courses

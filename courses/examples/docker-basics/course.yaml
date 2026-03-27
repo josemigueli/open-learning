@@ -1,0 +1,18 @@
+id: docker-basics
+title: "Fundamentos de Docker"
+description: "Aprende los conceptos básicos de contenedores y cómo usar Docker para empaquetar tus aplicaciones."
+author: "opencode"
+language: "es"
+level: beginner
+version: "1.0.0"
+tags:
+  - docker
+  - devops
+  - containers
+modules:
+  - id: "01-introduccion"
+    title: "Introducción a Contenedores"
+    lessons:
+      - id: "que-es-docker"
+        title: "¿Qué es Docker?"
+        path: "modules/01-introduccion/que-es-docker.md"

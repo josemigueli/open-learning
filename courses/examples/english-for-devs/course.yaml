@@ -1,0 +1,52 @@
+id: english-for-devs
+title: "Inglés para Desarrolladores de Software"
+description: "Curso de inglés técnico orientado a programadores para mejorar vocabulario y comprensión lectora."
+author: "miguel"
+language: "es"
+target_language: "en"
+level: beginner
+tags:
+  - english
+  - programming
+  - software-development
+version: "1.0.0"
+modules:
+  - id: "01-basics"
+    title: "Fundamentos"
+    lessons:
+      - id: "lesson-01"
+        title: "Variables and Data Types"
+        path: "modules/01-basics/lesson-01.md"
+      - id: "lesson-02"
+        title: "Functions and Methods"
+        path: "modules/01-basics/lesson-02.md"
+      - id: "lesson-03"
+        title: "Control Flow: If, Else, Loops"
+        path: "modules/01-basics/lesson-03.md"
+  - id: "02-intermediate"
+    title: "Nivel Intermedio"
+    lessons:
+      - id: "lesson-04"
+        title: "Error Handling & Debugging"
+        path: "modules/02-intermediate/lesson-04.md"
+      - id: "lesson-05"
+        title: "Object-Oriented Programming (OOP)"
+        path: "modules/02-intermediate/lesson-05.md"
+      - id: "lesson-06"
+        title: "Asynchronous Programming"
+        path: "modules/02-intermediate/lesson-06.md"
+      - id: "lesson-07"
+        title: "APIs and HTTP Requests"
+        path: "modules/02-intermediate/lesson-07.md"
+  - id: "03-collaboration"
+    title: "Colaboración y Metodologías"
+    lessons:
+      - id: "lesson-08"
+        title: "Git and Version Control"
+        path: "modules/03-collaboration/lesson-08.md"
+      - id: "lesson-09"
+        title: "Code Reviews and PRs"
+        path: "modules/03-collaboration/lesson-09.md"
+      - id: "lesson-10"
+        title: "Agile and Daily Standups"
+        path: "modules/03-collaboration/lesson-10.md"
