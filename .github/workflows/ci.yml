@@ -29,6 +29,7 @@ jobs:
           node-version: 20
           cache: "npm"
       - run: npm ci
+      - run: npm rebuild better-sqlite3
       - run: npm test
 
   build:
