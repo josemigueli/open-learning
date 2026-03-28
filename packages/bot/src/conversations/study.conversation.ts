@@ -284,7 +284,7 @@ async function studyLesson(
   const summary = await conversation.external(() =>
     LearningService.generateSessionSummary(
       { questionsAsked: questions.length, correctAnswers: correctCount },
-      user
+      course!.language
     )
   );
 
