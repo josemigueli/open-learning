@@ -1,0 +1,21 @@
+id: web-accessibility
+title: "Fundamentos de Accesibilidad Web"
+description: "Aprende los principios básicos para crear interfaces usables por todas las personas, independientemente de sus capacidades físicas o cognitivas."
+author: "opencode"
+language: "es"
+level: beginner
+version: "1.0.0"
+tags:
+  - web
+  - a11y
+  - frontend
+modules:
+  - id: "01-fundamentos"
+    title: "Introducción a la Accesibilidad"
+    lessons:
+      - id: "introduccion"
+        title: "¿Qué es la Accesibilidad Web?"
+        path: "modules/01-fundamentos/introduccion.md"
+      - id: "semantica"
+        title: "El Poder del HTML Semántico"
+        path: "modules/01-fundamentos/semantica.md"
