@@ -116,7 +116,7 @@ bot.callbackQuery("menu_continue", async (ctx: BotContext) => {
 
   if (coursesWithProgress.length === 0) {
     return ctx.reply(
-      "📚 Aún no has started ningún curso.\n\nUsa /cursos para ver los cursos disponibles y empezar a estudiar."
+      "📚 Aún no has iniciado ningún curso.\n\nUsa /cursos para ver los cursos disponibles y empezar a estudiar."
     );
   }
 
