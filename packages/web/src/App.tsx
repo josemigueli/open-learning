@@ -15,6 +15,17 @@ const COURSES = [
     icon: "🇬🇧",
   },
   {
+    id: "web-accessibility",
+    title: "Fundamentos de Accesibilidad Web",
+    description:
+      "Aprende los principios básicos para crear interfaces usables por todas las personas, independientemente de sus capacidades físicas o cognitivas.",
+    level: "Principiante",
+    tags: ["Web", "A11y", "Frontend"],
+    modules: 1,
+    lessons: 2,
+    icon: "♿",
+  },
+  {
     id: "docker-basics",
     title: "Fundamentos de Docker",
     description:
