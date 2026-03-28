@@ -24,6 +24,9 @@ FROM node:22-alpine AS runner
 # Definimos que será entorno de Producción
 ENV NODE_ENV=production
 
+# Instalar tsx globalmente para asegurar que el comando del package.json lo encuentre
+RUN npm install -g tsx
+
 WORKDIR /app
 
 # Copiamos todo lo compilado de la capa de 'builder' (incluyendo node_modules locales)
@@ -41,5 +44,6 @@ USER node
 # Cambiamos explícitamente al directorio del bot
 WORKDIR /app/packages/bot
 
-# El comando de arranque (`tsx src/index.ts`)
-CMD ["npm", "run", "start"]
+# El comando de arranque modificado para no morir inmediatamente si hay un error
+# de sintaxis o de módulo faltante, permitiendo leer los logs en Dokploy.
+CMD ["sh", "-c", "npm run start || echo 'El bot falló al iniciar. Me quedaré vivo 60 segundos para que leas el error.' && sleep 60"]
