@@ -16,6 +16,10 @@
 | :------------------------------------------------------------------: | :-------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | [@openlearning_cubepath_bot](https://t.me/openlearning_cubepath_bot) | [openlearning.josemigueli.com](https://openlearning.josemigueli.com/) | [Ver Certificado](https://openlearning.josemigueli.com/cert/db55dd3f577f?name=Jos%C3%A9+Miguel&course=Fundamentos+de+Docker&issuedAt=2026-03-28T15%3A41%3A09.000Z) |
 
+<br>
+
+> 👨‍⚖️ **Nota para Jueces (Fast-Pass):** Para probar el flujo completo rápidamente (desde tomar una lección, hasta la evaluación con IA y la generación del certificado final), se recomienda elegir el curso **"Fundamentos de Docker"**, el cual consta de una única lección de lectura de 1 minuto.
+
 </div>
 
 ---
