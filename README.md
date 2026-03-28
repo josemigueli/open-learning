@@ -120,15 +120,37 @@ npm run dev          # Iniciar el bot en modo desarrollo
 | `npm run lint`        | Ejecuta el linter en todo el proyecto                |
 | `npm run format`      | Formatea el código con Prettier                      |
 
-### Docker (Recomendado para despliegue)
+### 🐳 Despliegue con Docker (Producción)
 
-Puedes levantar el bot rápidamente usando Docker:
+Este proyecto utiliza Docker para su despliegue en producción, orquestado a través de **Dockploy**. La arquitectura se divide en dos componentes independientes:
+
+1.  **🤖 Telegram Bot**: Gestionado por `docker/bot.Dockerfile`.
+    - Se encarga de la interacción con los usuarios y la lógica de aprendizaje.
+    - **Persistencia**: Es **obligatorio** montar un volumen en `/app/data` para la base de datos SQLite.
+    - **Ciclo de vida**: Al arrancar, ejecuta automáticamente `npm run db:migrate` para asegurar que el esquema esté actualizado.
+
+2.  **🌐 Web App (Landing & API)**: Gestionada por `docker/web.Dockerfile`.
+    - Construye la interfaz web con Vite y la sirve de forma eficiente mediante Nginx (`docker/nginx.conf`).
+
+#### Variables de Entorno Necesarias
+
+Asegúrate de configurar los secretos en tu panel de **Dockploy**:
+
+- `TELEGRAM_BOT_TOKEN`: Token obtenido de BotFather.
+- `OPENAI_MODEL`: Modelo para generar preguntas, revisar respuestas y flashcards.
+- `OPENAI_API_KEY`: Para la integración con los modelos de IA.
+- `DATABASE_URL`: (Opcional, por defecto apunta a `/app/data/openlearning.db`).
+- `WEB_URL`: Para generar el certificado al finalizar un curso, el https es obligatorio.
+
+#### Desarrollo Local con Docker
+
+Si prefieres probar el entorno completo de forma local usando los mismos Dockerfiles de producción:
 
 ```bash
 docker-compose up -d --build
 ```
 
-Esto configurará el bot, la persistencia en el volumen `./data` y cargará tus variables de entorno automáticamente.
+Esto levantará tanto el bot (procesando mensajes) como la interfaz web (disponible en `http://localhost:8080`).
 
 ---
 
