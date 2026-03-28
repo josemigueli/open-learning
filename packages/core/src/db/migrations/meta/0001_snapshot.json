@@ -42,12 +42,8 @@
           "name": "certificates_user_id_users_id_fk",
           "tableFrom": "certificates",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -55,12 +51,8 @@
           "name": "certificates_course_id_courses_id_fk",
           "tableFrom": "certificates",
           "tableTo": "courses",
-          "columnsFrom": [
-            "course_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["course_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -154,9 +146,7 @@
       "indexes": {
         "courses_slug_unique": {
           "name": "courses_slug_unique",
-          "columns": [
-            "slug"
-          ],
+          "columns": ["slug"],
           "isUnique": true
         }
       },
@@ -165,12 +155,8 @@
           "name": "courses_author_id_users_id_fk",
           "tableFrom": "courses",
           "tableTo": "users",
-          "columnsFrom": [
-            "author_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["author_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -245,12 +231,8 @@
           "name": "progress_user_id_users_id_fk",
           "tableFrom": "progress",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -258,12 +240,8 @@
           "name": "progress_course_id_courses_id_fk",
           "tableFrom": "progress",
           "tableTo": "courses",
-          "columnsFrom": [
-            "course_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["course_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -340,12 +318,8 @@
           "name": "sessions_user_id_users_id_fk",
           "tableFrom": "sessions",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -353,12 +327,8 @@
           "name": "sessions_course_id_courses_id_fk",
           "tableFrom": "sessions",
           "tableTo": "courses",
-          "columnsFrom": [
-            "course_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["course_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -410,9 +380,7 @@
       "indexes": {
         "users_telegram_id_unique": {
           "name": "users_telegram_id_unique",
-          "columns": [
-            "telegram_id"
-          ],
+          "columns": ["telegram_id"],
           "isUnique": true
         }
       },
