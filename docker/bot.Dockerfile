@@ -48,4 +48,4 @@ WORKDIR /app
 # Usamos `npm run db:migrate --workspace=@open-learning/core` que lee 
 # la configuración de Drizzle y aplica los cambios desde `/src/db/migrations`
 # a la base de datos de producción conectada.
-CMD ["sh", "-c", "npm run db:migrate --workspace=@open-learning/core && cd packages/bot && npm run start"]
+CMD ["sh", "-c", "npm run db:migrate --workspace=@open-learning/core && npm run start --workspace=@open-learning/bot"]
