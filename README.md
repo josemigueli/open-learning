@@ -8,7 +8,13 @@
 [![Technology](https://img.shields.io/badge/Stack-Node.js%20%7C%20TypeScript%20%7C%20SQLite-blue?style=for-the-badge&logo=typescript&logoColor=white)](#-stack-tecnológico)
 [![Telegram Bot](https://img.shields.io/badge/Telegram-Bot-26A69A?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/openlearning_cubepath_bot)
 
-[📘 Ver Idea](#-la-visión) · [🏗️ Arquitectura](#-arquitectura) · [🛠️ Cómo empezar](#-desarrollo) · [🎁 CubePath](#-despliegue-en-cubepath)
+[📘 Ver Idea](#-la-visión) · [🏗️ Arquitectura](#-arquitectura) · [🛠️ Cómo empezar](#-desarrollo) · [🎁 CubePath](#-despliegue-en-cubepath) · [📷 Galería](#-galería)
+
+### 🚀 Probar Ahora
+
+|                          🤖 Bot de Telegram                          |                            🌐 Landing Page                            |                                                                       📜 Certificado Ejemplo                                                                       |
+| :------------------------------------------------------------------: | :-------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [@openlearning_cubepath_bot](https://t.me/openlearning_cubepath_bot) | [openlearning.josemigueli.com](https://openlearning.josemigueli.com/) | [Ver Certificado](https://openlearning.josemigueli.com/cert/db55dd3f577f?name=Jos%C3%A9+Miguel&course=Fundamentos+de+Docker&issuedAt=2026-03-28T15%3A41%3A09.000Z) |
 
 </div>
 
@@ -114,15 +120,37 @@ npm run dev          # Iniciar el bot en modo desarrollo
 | `npm run lint`        | Ejecuta el linter en todo el proyecto                |
 | `npm run format`      | Formatea el código con Prettier                      |
 
-### Docker (Recomendado para despliegue)
+### 🐳 Despliegue con Docker (Producción)
 
-Puedes levantar el bot rápidamente usando Docker:
+Este proyecto utiliza Docker para su despliegue en producción, orquestado a través de **Dockploy**. La arquitectura se divide en dos componentes independientes:
+
+1.  **🤖 Telegram Bot**: Gestionado por `docker/bot.Dockerfile`.
+    - Se encarga de la interacción con los usuarios y la lógica de aprendizaje.
+    - **Persistencia**: Es **obligatorio** montar un volumen en `/app/data` para la base de datos SQLite.
+    - **Ciclo de vida**: Al arrancar, ejecuta automáticamente `npm run db:migrate` para asegurar que el esquema esté actualizado.
+
+2.  **🌐 Web App (Landing & API)**: Gestionada por `docker/web.Dockerfile`.
+    - Construye la interfaz web con Vite y la sirve de forma eficiente mediante Nginx (`docker/nginx.conf`).
+
+#### Variables de Entorno Necesarias
+
+Asegúrate de configurar los secretos en tu panel de **Dockploy**:
+
+- `TELEGRAM_BOT_TOKEN`: Token obtenido de BotFather.
+- `OPENAI_MODEL`: Modelo para generar preguntas, revisar respuestas y flashcards.
+- `OPENAI_API_KEY`: Para la integración con los modelos de IA.
+- `DATABASE_URL`: (Opcional, por defecto apunta a `/app/data/openlearning.db`).
+- `WEB_URL`: Para generar el certificado al finalizar un curso, el https es obligatorio.
+
+#### Desarrollo Local con Docker
+
+Si prefieres probar el entorno completo de forma local usando los mismos Dockerfiles de producción:
 
 ```bash
 docker-compose up -d --build
 ```
 
-Esto configurará el bot, la persistencia en el volumen `./data` y cargará tus variables de entorno automáticamente.
+Esto levantará tanto el bot (procesando mensajes) como la interfaz web (disponible en `http://localhost:8080`).
 
 ---
 
@@ -144,23 +172,39 @@ estimated_time: 15
 
 ---
 
-## 🤝 Contribuciones
+## 📷 Galería
 
-¿Quieres crear un curso o mejorar el código? ¡Eres bienvenido! Revisa nuestra guía en `docs/CONTRIBUTING.md` (próximamente) y únete a la revolución del aprendizaje abierto.
+Capturas de la experiencia completa: desde la landing page hasta la interacción con el bot de Telegram.
+
+### Landing page
+
+![Landing](./assets/landing-optimized.png)
+
+### Certificado
+
+![Certificate](./assets/certificate-optimized.png)
+
+### Bot de Telegram
+
+|       Vista de Inicio       |            Preguntas con IA            |           Curso Finalizado            |
+| :-------------------------: | :------------------------------------: | :-----------------------------------: |
+| ![](./assets/bot-start.jpg) | ![](./assets/bot-course-questions.jpg) | ![](./assets/bot-course-finished.jpg) |
 
 ---
-
-<div align="center">
-  Hecho con ❤️ para la Hackatón CubePath 2026.
-</div>
 
 ## Estructura del Proyecto
 
 ```
 open-learning/
 ├── packages/
-│   ├── bot/           # Interfaz Telegram (Grammy)
+│   ├── bot/            # Interfaz Telegram (Grammy)
 │   └── core/           # Lógica de negocio, servicios, base de datos
 ├── courses/            # Contenido de cursos en Markdown
 └── scripts/            # Scripts de prueba
 ```
+
+---
+
+<div align="center">
+  Hecho con ❤️ para la Hackatón CubePath 2026 de midudev.
+</div>

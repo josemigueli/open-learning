@@ -1,6 +1,13 @@
-import { conversations, type Conversation, type ConversationFlavor } from "@grammyjs/conversations";
+import {
+  conversations,
+  type Conversation,
+  type ConversationFlavor,
+  createConversation,
+} from "@grammyjs/conversations";
 import "dotenv/config";
 import { Bot, type Context, session, type SessionFlavor } from "grammy";
+import { configLevelConversation } from "./conversations/config.conversation.js";
+import { studyConversation } from "./conversations/study.conversation.js";
 
 // Typed session data
 export interface SessionData {
@@ -28,3 +35,7 @@ export const bot = new Bot<BotContext>(process.env.TELEGRAM_BOT_TOKEN);
 // Session setup with typed initial data
 bot.use(session({ initial: (): SessionData => ({}) }));
 bot.use(conversations());
+
+// Register all conversations globally BEFORE commands are evaluated
+bot.use(createConversation(configLevelConversation));
+bot.use(createConversation(studyConversation));

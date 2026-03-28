@@ -1,11 +1,21 @@
 version: "3.8"
 services:
   bot:
-    build: .
+    build:
+      context: .
+      dockerfile: docker/bot.Dockerfile
     restart: always
     env_file:
       - .env
     volumes:
       - ./data:/app/data
-      # Ensure you don't overwrite your courses if you want hot-reloading
-      # - ./courses:/app/courses
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/web.Dockerfile
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - bot

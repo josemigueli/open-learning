@@ -70,18 +70,19 @@ Determine if the student is correct, provide a score from 0-10, and give constru
    */
   static async generateSessionSummary(
     sessionData: SessionSummaryData,
-    _user: UserConfig
+    language: string
   ): Promise<string> {
     const result = await generateWithModel((model) =>
       generateText({
         model,
-        prompt: `Summarize the student's recent study session. Keep it brief, motivational, and highlight what they learned based on this data:
-      
-Questions Asked: ${sessionData.questionsAsked}
-Correct Answers: ${sessionData.correctAnswers}
-Score: ${Math.round((sessionData.correctAnswers / sessionData.questionsAsked) * 100)}%
+        prompt: `Create a brief, motivational summary of the student's study session in ${language}.
 
-Provide a brief, encouraging paragraph (max 3 sentences) in the user's language.`,
+Data:
+- Questions: ${sessionData.questionsAsked}
+- Correct: ${sessionData.correctAnswers}
+- Score: ${Math.round((sessionData.correctAnswers / sessionData.questionsAsked) * 100)}%
+
+Write2-3 encouraging sentences in ${language}. Be specific about their achievement.`,
       })
     );
     return result.text;

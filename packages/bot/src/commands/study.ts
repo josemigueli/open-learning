@@ -1,9 +1,4 @@
-import { createConversation } from "@grammyjs/conversations";
 import { bot, type BotContext } from "../bot.js";
-import { studyConversation } from "../conversations/study.conversation.js";
-
-// Register conversation
-bot.use(createConversation(studyConversation));
 
 bot.command("estudiar", async (ctx) => {
   await ctx.reply(
