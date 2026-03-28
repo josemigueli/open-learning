@@ -8,7 +8,13 @@
 [![Technology](https://img.shields.io/badge/Stack-Node.js%20%7C%20TypeScript%20%7C%20SQLite-blue?style=for-the-badge&logo=typescript&logoColor=white)](#-stack-tecnológico)
 [![Telegram Bot](https://img.shields.io/badge/Telegram-Bot-26A69A?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/openlearning_cubepath_bot)
 
-[📘 Ver Idea](#-la-visión) · [🏗️ Arquitectura](#-arquitectura) · [🛠️ Cómo empezar](#-desarrollo) · [🎁 CubePath](#-despliegue-en-cubepath)
+[📘 Ver Idea](#-la-visión) · [🏗️ Arquitectura](#-arquitectura) · [🛠️ Cómo empezar](#-desarrollo) · [🎁 CubePath](#-despliegue-en-cubepath) · [📷 Galería](#-galería)
+
+### 🚀 Probar Ahora
+
+|                          🤖 Bot de Telegram                          |                            🌐 Landing Page                            |                                                                       📜 Certificado Ejemplo                                                                       |
+| :------------------------------------------------------------------: | :-------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [@openlearning_cubepath_bot](https://t.me/openlearning_cubepath_bot) | [openlearning.josemigueli.com](https://openlearning.josemigueli.com/) | [Ver Certificado](https://openlearning.josemigueli.com/cert/db55dd3f577f?name=Jos%C3%A9+Miguel&course=Fundamentos+de+Docker&issuedAt=2026-03-28T15%3A41%3A09.000Z) |
 
 </div>
 
@@ -144,23 +150,39 @@ estimated_time: 15
 
 ---
 
-## 🤝 Contribuciones
+## 📷 Galería
 
-¿Quieres crear un curso o mejorar el código? ¡Eres bienvenido! Revisa nuestra guía en `docs/CONTRIBUTING.md` (próximamente) y únete a la revolución del aprendizaje abierto.
+Capturas de la experiencia completa: desde la landing page hasta la interacción con el bot de Telegram.
+
+### Landing page
+
+![Landing](./assets/landing-optimized.png)
+
+### Certificado
+
+![Certificate](./assets/certificate-optimized.png)
+
+### Bot de Telegram
+
+|       Vista de Inicio       |            Preguntas con IA            |           Curso Finalizado            |
+| :-------------------------: | :------------------------------------: | :-----------------------------------: |
+| ![](./assets/bot-start.jpg) | ![](./assets/bot-course-questions.jpg) | ![](./assets/bot-course-finished.jpg) |
 
 ---
-
-<div align="center">
-  Hecho con ❤️ para la Hackatón CubePath 2026.
-</div>
 
 ## Estructura del Proyecto
 
 ```
 open-learning/
 ├── packages/
-│   ├── bot/           # Interfaz Telegram (Grammy)
+│   ├── bot/            # Interfaz Telegram (Grammy)
 │   └── core/           # Lógica de negocio, servicios, base de datos
 ├── courses/            # Contenido de cursos en Markdown
 └── scripts/            # Scripts de prueba
 ```
+
+---
+
+<div align="center">
+  Hecho con ❤️ para la Hackatón CubePath 2026 de midudev.
+</div>
