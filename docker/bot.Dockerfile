@@ -42,8 +42,10 @@ RUN chown -R node:node /app
 USER node
 
 # Cambiamos explícitamente al directorio del bot
-WORKDIR /app/packages/bot
+WORKDIR /app
 
-# El comando de arranque modificado para no morir inmediatamente si hay un error
-# de sintaxis o de módulo faltante, permitiendo leer los logs en Dokploy.
-CMD ["sh", "-c", "npm run start || echo 'El bot falló al iniciar. Me quedaré vivo 60 segundos para que leas el error.' && sleep 60"]
+# El comando de arranque modificado para ejecutar migraciones primero.
+# Usamos `npm run db:migrate --workspace=@open-learning/core` que lee 
+# la configuración de Drizzle y aplica los cambios desde `/src/db/migrations`
+# a la base de datos de producción conectada.
+CMD ["sh", "-c", "npm run db:migrate --workspace=@open-learning/core && cd packages/bot && npm run start"]
