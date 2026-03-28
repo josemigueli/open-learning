@@ -1,16 +1,12 @@
-import { createConversation } from "@grammyjs/conversations";
 import { InlineKeyboard } from "grammy";
 import { UserService } from "@open-learning/core";
 import { bot } from "../bot.js";
-import { configLevelConversation } from "../conversations/config.conversation.js";
 import { markdownToTelegramHtml } from "../utils/markdown.js";
 
 interface ContextWithReply {
   from?: { id: number };
   reply: (text: string, options?: object) => Promise<unknown>;
 }
-
-bot.use(createConversation(configLevelConversation));
 
 export async function showConfigMenu(ctx: ContextWithReply) {
   const telegramId = ctx.from?.id.toString();

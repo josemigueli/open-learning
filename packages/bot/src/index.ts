@@ -5,9 +5,7 @@ import * as fs from "node:fs/promises";
 import * as path from "node:path";
 import { CourseService, UserService } from "@open-learning/core";
 import { bot } from "./bot.js";
-// Conversations MUST be registered before global handlers
 import "./commands/config.js";
-// Global handlers
 import "./commands/courses.js";
 import "./commands/flashcards.js";
 import "./commands/menu.js";

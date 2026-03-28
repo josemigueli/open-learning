@@ -106,7 +106,11 @@ bot.callbackQuery("menu_continue", async (ctx: BotContext) => {
           (acc: number, m: CourseModule) => acc + m.lessons.length,
           0
         ) ?? 0;
-      coursesWithProgress.push({ course, completedCount, totalLessons });
+
+      // Solo agregamos cursos que no estén completados al 100%
+      if (completedCount < totalLessons) {
+        coursesWithProgress.push({ course, completedCount, totalLessons });
+      }
     }
   }
 

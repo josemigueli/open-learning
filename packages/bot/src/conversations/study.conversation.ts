@@ -10,7 +10,7 @@ import {
 } from "@open-learning/core";
 import type { CourseModule } from "@open-learning/core";
 import { type BotConversation, type BaseContext, type BotContext } from "../bot.js";
-import { showCourses } from "../commands/courses.js";
+import { showCourses } from "../controllers/courses.controller.js";
 import { markdownToTelegramHtml } from "../utils/markdown.js";
 
 type ModuleLesson = CourseModule["lessons"][0];
