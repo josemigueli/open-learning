@@ -16,7 +16,7 @@ RUN npm ci
 COPY packages/bot packages/bot/
 COPY packages/core packages/core/
 COPY tsconfig.json ./
-COPY courses/examples courses/examples/
+COPY courses/examples packages/bot/courses/examples/
 
 # Etapa 2: Imagen Final (más limpia)
 FROM node:22-alpine AS runner
