@@ -215,14 +215,23 @@ async function studyLesson(
 
   let correctCount = 0;
 
+  const separator = "━━━━━━━━━━━━";
+
   for (const [index, q] of questions.entries()) {
+    const optionsText = q.options
+      .map((opt: string, i: number) => `${separator}\n\n${String.fromCharCode(65 + i)}) ${opt}`)
+      .join("\n\n");
+
     const kb = new InlineKeyboard();
-    q.options.forEach((opt: string, i: number) => {
-      kb.text(opt, `ans_${i}`).row();
+    q.options.forEach((_: string, i: number) => {
+      kb.text(String.fromCharCode(65 + i), `ans_${i}`);
+      if (i < q.options.length - 1) kb.row();
     });
 
     await ctx.reply(
-      markdownToTelegramHtml(`❓ Pregunta ${index + 1}/${questions.length}:\n\n**${q.question}**`),
+      markdownToTelegramHtml(
+        `❓ Pregunta ${index + 1}/${questions.length}\n\n${separator}\n\n**${q.question}**\n\n${separator}\n\n📝 Opciones:\n\n${optionsText}`
+      ),
       {
         parse_mode: "HTML",
         reply_markup: kb,
